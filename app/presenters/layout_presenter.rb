@@ -1,0 +1,3 @@
+class LayoutPresenter < BasePresenter
+
+end

@@ -1,0 +1,38 @@
+<h1><%= @playlist.title.titleize %></h1>
+
+<ul class='video-filters'>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" data-filter='name'>Name</button>
+    <button type="button" class="btn btn-default" data-filter='date'>Date</button>
+    <button type="button" class="btn btn-default" data-filter='populatiry'>Popularity</button>
+  </div>
+</ul>
+
+<div class="row" id='video-list'>
+  <% @videos.each do |video| %>
+  <div class='film-thumbnail-container col-md-3 col-sm-6' data-name='<%= video.title %>' data-date="<%= video.created_at %>" data-rating='<%= video.rating %>' data-popularity='<%= video.request_count %>'>
+    <%= render partial: 'shared/video_thumbnail', locals: {video: video, truncate_length: 20} %>
+  </div>
+  <% end %>
+</div>
+
+<script>
+$('ul.video-filters').on('click', '.btn', function(e){
+  e.preventDefault();
+  var filter = this.dataset.filter;
+  var divList = $(".film-thumbnail-container");
+
+  divList.sort(function(a, b){
+    if(filter === 'name') {
+      if($(b).data(filter) < $(a).data(filter)) return 1;
+      if($(b).data(filter) > $(a).data(filter)) return -1;
+      return 0;
+    } else {
+      if($(b).data(filter) < $(a).data(filter)) return -1;
+      if($(b).data(filter) > $(a).data(filter)) return 1;
+      return 0;
+    }
+  });
+  $("#video-list").html(divList);
+})
+</script>

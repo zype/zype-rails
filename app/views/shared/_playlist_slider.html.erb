@@ -1,0 +1,19 @@
+<div id='<%= id %>' class="owl-carousel playlist-container">
+  <% video_collection.each do |video| %>
+  <%= render partial: 'shared/video_thumbnail', locals: {video: video, truncate_length: 30} %>
+  <% end %>
+</div>
+<script>
+$('#'+'<%= id%>').owlCarousel({
+  items : 3, //10 items above 1000px browser width
+  itemsDesktop : [1000,3], //5 items between 1000px and 901px
+  itemsDesktopSmall : [900,3], // betweem 900px and 601px
+  itemsTablet: [600,2], //2 items between 600 and 0);
+  navigation : true,
+  navigationText: [
+  '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+  '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+  ],
+  scrollPerPage: true
+});
+</script>

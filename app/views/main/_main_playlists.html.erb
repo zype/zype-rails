@@ -1,0 +1,8 @@
+<% cache("layout/main/playlists", :expires_in => time_to_midnight) do %>
+  <% @playlists.each do |playlist| %>
+    <div class="slider-holder">
+      <h2><%= link_to playlist.title, playlist_path(playlist._id) %></h2>
+      <%= render partial: 'shared/playlist_slider', locals: {id:friendly_title(playlist.title), video_collection: playlist.videos} %>
+    </div>
+  <% end %>
+<% end %>

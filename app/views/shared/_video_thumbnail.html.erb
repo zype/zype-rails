@@ -1,0 +1,12 @@
+<div class= 'film-thumbnail'>
+  <div class='film-thumbnail-title'>
+    <h4><%= truncate(video.title, length: truncate_length) %></h4>
+  </div>
+  <%= link_to friendly_video_title_path(friendly_title: friendly_title(video.title), id: video._id) do %>
+  <div class='overlayPic' style='background-image: <%= video_overlay(video) %>;'>
+    <div class="film-description text-box">
+      <p><%= truncate(video.description, length: 200) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
