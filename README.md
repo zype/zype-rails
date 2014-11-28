@@ -4,7 +4,10 @@ This is a boilerplate Rails App using the Zype Platform and Zype Gem.
 
 ## Setup
 
-1. You will need your Zype API and Player keys. You can find these [in the Zype Platform](https://admin.zype.com/settings/api).
+1. You will need your Zype API and Player keys. You can find these in the [Zype Platform](https://admin.zype.com/) under the 'Settings' menu.
+
+![Alt text](screenshots/settings.png)
+
 
 2. Clone the repo
 
