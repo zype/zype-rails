@@ -1,15 +1,10 @@
 <h1><%= @video.title.titleize %></h1>
 
-<div id='player'></div>
+<div id='zype_player'></div>
 
 <% if description = @video.description %>
 <p class='video-description'>
   <%= truncate(description.html_safe, length: 400) %>
 </p>
 <% end %>
-
-<script type="text/javascript" src="https://api.zype.com/player-1.1.0.js"></script>
-<script type="text/javascript">
-  zype.player_key = "<%= ENV['ZYPE_PLAYER_KEY'] %>";
-  zype.play('#player', '<%= @video._id %>', { autoplay: true });
-</script>
+<script id='ZYPE_PLAYER_JS' src="https://api.zype.com/embed/<%= @video._id %>.js?player_key=<%= ENV['ZYPE_PLAYER_KEY'] %>&autoplay=true" type='text/javascript'></script>
