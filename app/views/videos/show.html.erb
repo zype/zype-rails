@@ -7,4 +7,4 @@
   <%= truncate(description.html_safe, length: 400) %>
 </p>
 <% end %>
-<script id='ZYPE_PLAYER_JS' src="https://api.zype.com/embed/<%= @video._id %>.js?player_key=<%= ENV['ZYPE_PLAYER_KEY'] %>&autoplay=true" type='text/javascript'></script>
+<script id='ZYPE_PLAYER_JS' src="https://player.zype.com/embed/<%= @video._id %>.js?player_key=<%= ENV['ZYPE_PLAYER_KEY'] %>&autoplay=true" type='text/javascript'></script>
