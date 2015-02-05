@@ -18,7 +18,7 @@ This is a boilerplate Rails App using the Zype Platform and Zype Gem.
 5. This application uses [dot-env](https://github.com/bkeepers/dotenv) to store keys. Create a .env file at the root of the app and set the following environment variables:
 
 - SECRET_KEY_BASE: Run 'rake secret' to create a key.
-- ZYPE_API_KEY: Your Zype API Key
+- ZYPE_API_KEY: Your Zype API Read Only Key
 - ZYPE_PLAYER_KEY: Your Zype Player Key
 
 ## License
